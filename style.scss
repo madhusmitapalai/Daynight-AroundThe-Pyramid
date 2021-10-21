@@ -1,0 +1,195 @@
+// delete the following line if no text is used
+// edit the line if you wanna use other fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+// use only the available space inside the 400x400 frame
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Variables
+$animation_duration: 8s;
+
+//sky
+.frame {
+  background-color: rgb(114, 218, 236);
+}
+
+.floor {
+  height: 150px;
+  width: 400px;
+  background-color: rgb(252, 209, 117);
+  position: absolute;
+  transform: translate(-50%, 35%);
+  z-index: 3;
+}
+
+.main_frame {
+  position: absolute;
+  height: 280px;
+  width: 280px;
+  border: 150px solid #333;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  border-radius: 300px;
+  animation-name: goNight;
+  animation-duration: $animation_duration;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.sun {
+  background-color: rgb(255, 255, 63);
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  transform: translate(-250%, 70%);
+  border-radius: 50px;
+  animation-name: sunRise;
+  animation-duration: $animation_duration;
+  animation-iteration-count: infinite;
+}
+
+@keyframes sunRise {
+  from {
+    transform: rotate(0deg) translate(-150px, 70px);
+  }
+  35% {
+    transform: rotate(30deg) translate(-130px, -50px);
+    transform-origin: (-150px, 50px);
+  }
+  to {
+    transform: rotate(180deg) translate(-70px, -160px);
+    transform-origin: (-150px, 50px);
+  }
+}
+
+.heap {
+  &__right_side {
+    width: 64px;
+    height: 48px;
+    position: absolute;
+    background-color: #fafafa;
+    transform: translate(-20%, 10%);
+    clip-path: polygon(65% 0, 0 100%, 100% 100%);
+    z-index: 2;
+    animation-name: shadowOfRightSide;
+    animation-duration: $animation_duration;
+    animation-iteration-count: infinite;
+  }
+  &__left_side {
+    width: 64px;
+    height: 48px;
+    position: absolute;
+    background-color: #eeeeee;
+    transform: translate(0%, 10%);
+    clip-path: polygon(45% 0, 0 100%, 100% 100%);
+    z-index: 1;
+    animation-name: shadowOfLeftSide;
+    animation-duration: $animation_duration;
+    animation-iteration-count: infinite;
+  }
+  &__shadow {
+    position: absolute;
+    width: 250px;
+    height: 48px;
+    background-color: #aaaaaa;
+    transform: translate(-50%, 110%);
+    z-index: 4;
+    clip-path: polygon(45% 0, 90% 100%, 75.5% 0);
+    animation-name: heapShadow;
+    animation-duration: $animation_duration;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes heapShadow {
+  0% {
+    clip-path: polygon(45% 0, 100% 30%, 75.5% 0);
+  }
+  10% {
+    clip-path: polygon(45% 0, 80% 50%, 75.5% 0);
+  }
+  30% {
+    clip-path: polygon(45% 0, 60% 30%, 75.5% 0);
+  }
+  50% {
+    clip-path: polygon(45% 0, 30% 30%, 75.5% 0);
+  }
+  60% {
+    clip-path: polygon(45% 0, 20% 40%, 75.5% 0);
+  }
+  80% {
+    clip-path: polygon(45% 0, 10% 20%, 75.5% 0);
+  }
+  100% {
+    clip-path: polygon(45% 0, 0% 0%, 75.5% 0);
+  }
+}
+
+@keyframes shadowOfRightSide {
+  from {
+    background-color: #fafafa;
+  }
+  40% {
+    background-color: #eaeaea;
+  }
+  to {
+    background-color: #e1e1e1;
+  }
+}
+
+@keyframes shadowOfLeftSide {
+  from {
+    background-color: #eeeeee;
+  }
+  40% {
+    background-color: #f1f1f1;
+  }
+  to {
+    background-color: #fafafa;
+  }
+}
+
+@keyframes goNight {
+  0% {
+    background-color: rgba(50, 50, 50, 1);
+  }
+  20% {
+    background-color: rgba(50, 50, 50, 0.2);
+  }
+  50% {
+    background-color: rgba(50, 50, 50, 0);
+  }
+  60% {
+    background-color: rgba(50, 50, 50, 0.5);
+  }
+  70% {
+    background-color: rgba(50, 50, 50, 1);
+  }
+  100% {
+    background-color: rgba(50, 50, 50, 1);
+  }
+}

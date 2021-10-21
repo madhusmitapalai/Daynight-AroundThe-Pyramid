@@ -1,0 +1,323 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  -webkit-box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.frame {
+  background-color: #72daec;
+}
+
+.floor {
+  height: 150px;
+  width: 400px;
+  background-color: #fcd175;
+  position: absolute;
+  -webkit-transform: translate(-50%, 35%);
+          transform: translate(-50%, 35%);
+  z-index: 3;
+}
+
+.main_frame {
+  position: absolute;
+  height: 280px;
+  width: 280px;
+  border: 150px solid #333;
+  z-index: 5;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 300px;
+  -webkit-animation-name: goNight;
+          animation-name: goNight;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.sun {
+  background-color: #ffff3f;
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  -webkit-transform: translate(-250%, 70%);
+          transform: translate(-250%, 70%);
+  border-radius: 50px;
+  -webkit-animation-name: sunRise;
+          animation-name: sunRise;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes sunRise {
+  from {
+    -webkit-transform: rotate(0deg) translate(-150px, 70px);
+            transform: rotate(0deg) translate(-150px, 70px);
+  }
+  35% {
+    -webkit-transform: rotate(30deg) translate(-130px, -50px);
+            transform: rotate(30deg) translate(-130px, -50px);
+    -webkit-transform-origin: -150px, 50px;
+            transform-origin: -150px, 50px;
+  }
+  to {
+    -webkit-transform: rotate(180deg) translate(-70px, -160px);
+            transform: rotate(180deg) translate(-70px, -160px);
+    -webkit-transform-origin: -150px, 50px;
+            transform-origin: -150px, 50px;
+  }
+}
+
+@keyframes sunRise {
+  from {
+    -webkit-transform: rotate(0deg) translate(-150px, 70px);
+            transform: rotate(0deg) translate(-150px, 70px);
+  }
+  35% {
+    -webkit-transform: rotate(30deg) translate(-130px, -50px);
+            transform: rotate(30deg) translate(-130px, -50px);
+    -webkit-transform-origin: -150px, 50px;
+            transform-origin: -150px, 50px;
+  }
+  to {
+    -webkit-transform: rotate(180deg) translate(-70px, -160px);
+            transform: rotate(180deg) translate(-70px, -160px);
+    -webkit-transform-origin: -150px, 50px;
+            transform-origin: -150px, 50px;
+  }
+}
+
+.heap__right_side {
+  width: 64px;
+  height: 48px;
+  position: absolute;
+  background-color: #fafafa;
+  -webkit-transform: translate(-20%, 10%);
+          transform: translate(-20%, 10%);
+  -webkit-clip-path: polygon(65% 0, 0 100%, 100% 100%);
+          clip-path: polygon(65% 0, 0 100%, 100% 100%);
+  z-index: 2;
+  -webkit-animation-name: shadowOfRightSide;
+          animation-name: shadowOfRightSide;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.heap__left_side {
+  width: 64px;
+  height: 48px;
+  position: absolute;
+  background-color: #eeeeee;
+  -webkit-transform: translate(0%, 10%);
+          transform: translate(0%, 10%);
+  -webkit-clip-path: polygon(45% 0, 0 100%, 100% 100%);
+          clip-path: polygon(45% 0, 0 100%, 100% 100%);
+  z-index: 1;
+  -webkit-animation-name: shadowOfLeftSide;
+          animation-name: shadowOfLeftSide;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.heap__shadow {
+  position: absolute;
+  width: 250px;
+  height: 48px;
+  background-color: #aaaaaa;
+  -webkit-transform: translate(-50%, 110%);
+          transform: translate(-50%, 110%);
+  z-index: 4;
+  -webkit-clip-path: polygon(45% 0, 90% 100%, 75.5% 0);
+          clip-path: polygon(45% 0, 90% 100%, 75.5% 0);
+  -webkit-animation-name: heapShadow;
+          animation-name: heapShadow;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes heapShadow {
+  0% {
+    -webkit-clip-path: polygon(45% 0, 100% 30%, 75.5% 0);
+            clip-path: polygon(45% 0, 100% 30%, 75.5% 0);
+  }
+  10% {
+    -webkit-clip-path: polygon(45% 0, 80% 50%, 75.5% 0);
+            clip-path: polygon(45% 0, 80% 50%, 75.5% 0);
+  }
+  30% {
+    -webkit-clip-path: polygon(45% 0, 60% 30%, 75.5% 0);
+            clip-path: polygon(45% 0, 60% 30%, 75.5% 0);
+  }
+  50% {
+    -webkit-clip-path: polygon(45% 0, 30% 30%, 75.5% 0);
+            clip-path: polygon(45% 0, 30% 30%, 75.5% 0);
+  }
+  60% {
+    -webkit-clip-path: polygon(45% 0, 20% 40%, 75.5% 0);
+            clip-path: polygon(45% 0, 20% 40%, 75.5% 0);
+  }
+  80% {
+    -webkit-clip-path: polygon(45% 0, 10% 20%, 75.5% 0);
+            clip-path: polygon(45% 0, 10% 20%, 75.5% 0);
+  }
+  100% {
+    -webkit-clip-path: polygon(45% 0, 0% 0%, 75.5% 0);
+            clip-path: polygon(45% 0, 0% 0%, 75.5% 0);
+  }
+}
+
+@keyframes heapShadow {
+  0% {
+    -webkit-clip-path: polygon(45% 0, 100% 30%, 75.5% 0);
+            clip-path: polygon(45% 0, 100% 30%, 75.5% 0);
+  }
+  10% {
+    -webkit-clip-path: polygon(45% 0, 80% 50%, 75.5% 0);
+            clip-path: polygon(45% 0, 80% 50%, 75.5% 0);
+  }
+  30% {
+    -webkit-clip-path: polygon(45% 0, 60% 30%, 75.5% 0);
+            clip-path: polygon(45% 0, 60% 30%, 75.5% 0);
+  }
+  50% {
+    -webkit-clip-path: polygon(45% 0, 30% 30%, 75.5% 0);
+            clip-path: polygon(45% 0, 30% 30%, 75.5% 0);
+  }
+  60% {
+    -webkit-clip-path: polygon(45% 0, 20% 40%, 75.5% 0);
+            clip-path: polygon(45% 0, 20% 40%, 75.5% 0);
+  }
+  80% {
+    -webkit-clip-path: polygon(45% 0, 10% 20%, 75.5% 0);
+            clip-path: polygon(45% 0, 10% 20%, 75.5% 0);
+  }
+  100% {
+    -webkit-clip-path: polygon(45% 0, 0% 0%, 75.5% 0);
+            clip-path: polygon(45% 0, 0% 0%, 75.5% 0);
+  }
+}
+
+@-webkit-keyframes shadowOfRightSide {
+  from {
+    background-color: #fafafa;
+  }
+  40% {
+    background-color: #eaeaea;
+  }
+  to {
+    background-color: #e1e1e1;
+  }
+}
+
+@keyframes shadowOfRightSide {
+  from {
+    background-color: #fafafa;
+  }
+  40% {
+    background-color: #eaeaea;
+  }
+  to {
+    background-color: #e1e1e1;
+  }
+}
+
+@-webkit-keyframes shadowOfLeftSide {
+  from {
+    background-color: #eeeeee;
+  }
+  40% {
+    background-color: #f1f1f1;
+  }
+  to {
+    background-color: #fafafa;
+  }
+}
+
+@keyframes shadowOfLeftSide {
+  from {
+    background-color: #eeeeee;
+  }
+  40% {
+    background-color: #f1f1f1;
+  }
+  to {
+    background-color: #fafafa;
+  }
+}
+
+@-webkit-keyframes goNight {
+  0% {
+    background-color: #323232;
+  }
+  20% {
+    background-color: rgba(50, 50, 50, 0.2);
+  }
+  50% {
+    background-color: rgba(50, 50, 50, 0);
+  }
+  60% {
+    background-color: rgba(50, 50, 50, 0.5);
+  }
+  70% {
+    background-color: #323232;
+  }
+  100% {
+    background-color: #323232;
+  }
+}
+
+@keyframes goNight {
+  0% {
+    background-color: #323232;
+  }
+  20% {
+    background-color: rgba(50, 50, 50, 0.2);
+  }
+  50% {
+    background-color: rgba(50, 50, 50, 0);
+  }
+  60% {
+    background-color: rgba(50, 50, 50, 0.5);
+  }
+  70% {
+    background-color: #323232;
+  }
+  100% {
+    background-color: #323232;
+  }
+}
+/*# sourceMappingURL=style.css.map */
